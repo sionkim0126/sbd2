@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.0'
 }
 
 group = 'sbd.example'
@@ -10,8 +12,14 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // Thymeleaf 템플릿 엔진: HTML 템플릿 렌더링
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    // Spring Boot Starter Web: 웹 애플리케이션을 위한 기본 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Spring Boot Starter Test: 테스트 관련 의존성
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
