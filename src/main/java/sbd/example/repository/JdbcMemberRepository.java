@@ -11,11 +11,11 @@ import java.util.Optional;
 
 import static java.sql.DriverManager.getConnection;
 
-public class JdbcMemberRepositrory implements MemberRepository {
+public class JdbcMemberRepository implements MemberRepository {
 
     private final DataSource dataSource;
 
-    public JdbcMemberRepositrory(DataSource dataSource){
+    public JdbcMemberRepository(DataSource dataSource){
         this.dataSource = dataSource;
     }
 

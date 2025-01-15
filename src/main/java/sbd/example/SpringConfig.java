@@ -3,9 +3,9 @@ package sbd.example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import sbd.example.repository.JdbcMemberRepositrory;
+import sbd.example.repository.JdbcMemberRepository;
+import sbd.example.repository.JdbcTemplateMemberRepository;
 import sbd.example.repository.MemberRepository;
-import sbd.example.repository.MemoryMemberRepository;
 import sbd.example.service.MemberService;
 
 import javax.sql.DataSource;
@@ -27,6 +27,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository(){
      /*   return new MemoryMemberRepository();*/
-        return new JdbcMemberRepositrory(dataSource);
+        /*return new JdbcMemberRepository(dataSource);*/
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
