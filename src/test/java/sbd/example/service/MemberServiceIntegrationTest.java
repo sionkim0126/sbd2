@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 import sbd.example.domain.Member;
 import sbd.example.repository.MemberRepository;
@@ -29,7 +30,7 @@ class MemberServiceIntegrationTest {
     void join() {
         //given 주어진 상황
         Member member = new Member();
-        member.setName("sion");
+        member.setName("sion4");
 
         //when 실행했을 때
         long saveInfo = memberService.join(member);
@@ -43,10 +44,10 @@ class MemberServiceIntegrationTest {
     public void 중복회원검증(){
         //given 주어진 상황
         Member member1 = new Member();
-        member1.setName("sion");
+        member1.setName("sion4");
 
         Member member2 = new Member();
-        member2.setName("sion");
+        member2.setName("sion4");
 
         //when 이렇게 했을 때
         memberService.join(member1);

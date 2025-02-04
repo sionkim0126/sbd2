@@ -2,6 +2,7 @@ package sbd.example.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sbd.example.domain.Member;
 import sbd.example.repository.MemberRepository;
 import sbd.example.repository.MemoryMemberRepository;
@@ -9,6 +10,7 @@ import sbd.example.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional //jpa는 객체지향적이고 엔티티 객체를 관리하기 때문에 트렌잭션을 spring에서 관리한다
 public class MemberService {
 
     private final MemberRepository memberRepository;
